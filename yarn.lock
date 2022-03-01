@@ -913,6 +913,11 @@ vue-tsc@^0.29.8:
     "@volar/shared" "0.29.8"
     vscode-vue-languageservice "0.29.8"
 
+vue3-hello-world@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/vue3-hello-world/-/vue3-hello-world-1.0.0.tgz#352b3bd960736f065a7fdb9c07f104cdd66da3b5"
+  integrity sha512-OlmHYSDpiopflwz3KE1p5uzNpjQXqMWPZzyvJGk0Dd0MB7Q8QFcKnpdYzC73pZT5jKgkGSrYRIKqhWafFOteSw==
+
 vue@^3.2.25:
   version "3.2.31"
   resolved "https://registry.npmmirror.com/vue/-/vue-3.2.31.tgz#e0c49924335e9f188352816788a4cca10f817ce6"
