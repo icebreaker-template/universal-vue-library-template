@@ -1,0 +1,32 @@
+{
+  "name": "vue3-hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/lib.umd.js",
+  "module": "./dist/lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lib.es.js",
+      "require": "./dist/lib.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {},
+  "keywords": [
+    "vue3",
+    "hello",
+    "world"
+  ],
+  "author": "SonOfMagic <qq1324318532@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonofmagic/universal-vue-library-template.git"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "name": "my-lib",
+  "name": "my-lib-creator",
   "main": "./dist/my-lib.umd.js",
   "module": "./dist/my-lib.es.js",
   "files": [

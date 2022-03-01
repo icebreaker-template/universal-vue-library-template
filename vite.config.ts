@@ -5,11 +5,11 @@ import * as path from "path";
 export default defineConfig({
   plugins: [vue()],
   build: {
+    outDir: path.resolve(__dirname, "src/components/HelloWorld/dist"),
     lib: {
-      entry: path.resolve(__dirname, "src/components/HelloWorld.vue"),
-      name: "MyLib",
-      fileName: (format) => `my-lib.${format}.js`,
-      // formats:['umd','cjs','es']
+      entry: path.resolve(__dirname, "src/components/HelloWorld/src/index.vue"),
+      name: "HelloWorld",
+      fileName: (format) => `lib.${format}.js`,
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
