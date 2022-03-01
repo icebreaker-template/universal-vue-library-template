@@ -1,0 +1,22 @@
+{
+  // test comment
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declarationDir": "types",
+    "strict": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./src/components/*"]
+    },
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["src/**/*", "components/**/*"]
+}
