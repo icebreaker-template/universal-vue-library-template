@@ -3,3 +3,5 @@
 A vue3-hello-world Component.
 
 You can use this for display hello world.
+
+auto generate dts 
