@@ -6,9 +6,9 @@ const config = {
   useTabs: false,
   singleQuote: true,
   trailingComma: 'none',
-  endOfLine: 'auto',
+  // endOfLine: 'auto',
   semi: false,
   plugins: [require('prettier-plugin-tailwindcss')]
-}
+};
 
-module.exports = config
+module.exports = config;

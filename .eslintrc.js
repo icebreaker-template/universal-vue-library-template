@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:vue/essential', 'standard'],
+  extends: [
+    'plugin:vue/essential',
+    'standard',
+    'prettier',
+    'plugin:prettier/recommended'
+  ],
   parserOptions: {
     ecmaVersion: 'latest',
     parser: '@typescript-eslint/parser',
@@ -14,7 +19,7 @@ module.exports = {
     uni: true
   },
   rules: {
-    'vue/no-multiple-template-root': 0,
-    'prettier/prettier': 2
+    'vue/no-multiple-template-root': 0
+    //'prettier/prettier': 2
   }
-};
+}
