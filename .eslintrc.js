@@ -9,9 +9,12 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
   globals: {
     uni: true
   },
-  rules: {}
-}
+  rules: {
+    'vue/no-multiple-template-root': 0,
+    'prettier/prettier': 2
+  }
+};
