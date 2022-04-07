@@ -1,0 +1,30 @@
+{
+  "name": "universal-vue-library-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "turbo": "^1.1.10"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonofmagic/universal-vue-library-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sonofmagic/universal-vue-library-template/issues"
+  },
+  "homepage": "https://github.com/sonofmagic/universal-vue-library-template#readme"
+}
