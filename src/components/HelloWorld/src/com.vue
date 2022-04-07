@@ -1,13 +1,12 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
 
 const items = ref([1, 2, 3, 4, 5, 6])
 
-const getStatus = (idx: number) => {
+const getStatus = (idx) => {
   return new Array(idx).fill(idx)
 }
+// createTextVNode
 </script>
 
 <template>
