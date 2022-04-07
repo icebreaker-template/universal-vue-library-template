@@ -2288,12 +2288,17 @@ vue-tsc@^0.33.9:
   dependencies:
     "@volar/vue-typescript" "0.33.9"
 
+"vue2@npm:vue@2", vue@2:
+  version "2.6.14"
+  resolved "https://registry.npmmirror.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
+
 vue3-hello-world@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/vue3-hello-world/-/vue3-hello-world-1.0.1.tgz#0c570317d69b3043495f001822f6e455c6b14e7b"
   integrity sha512-mE92OBAeUv124LlaBPS9zvAKo/SLVmDSzTSV3513048y2Qcr6vdMV3uIpYjwBcnHJAOYjvdNxM7XQYGR7pbSgw==
 
-vue@^3.2.25:
+"vue3@npm:vue@3":
   version "3.2.31"
   resolved "https://registry.npmmirror.com/vue/-/vue-3.2.31.tgz#e0c49924335e9f188352816788a4cca10f817ce6"
   integrity sha512-odT3W2tcffTiQCy57nOT93INw1auq5lYLLYtWpPYQQYQOOdHiqFct9Xhna6GJ+pJQaF67yZABraH47oywkJgFw==

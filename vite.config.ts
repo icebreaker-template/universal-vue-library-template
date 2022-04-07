@@ -3,15 +3,13 @@ import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
 
-// const buildMap = {
-//   HelloWorld: path.resolve(__dirname, 'src/components/HelloWorld')
-// }
+const buildMap = {
+  HelloWorld: path.resolve(__dirname, 'src/components/HelloWorld')
+}
 
-console.log(process.env.COM_TARGET)
+const dir = buildMap[process.env.COM_TARGET] || __dirname
 
-// const dir = buildMap[target] || __dirname
-
-process.chdir(path.resolve(__dirname, 'src/components/HelloWorld'))
+process.chdir(dir)
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [

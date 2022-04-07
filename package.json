@@ -18,11 +18,15 @@
     "build": "vue-tsc --noEmit && vite build",
     "build:HelloWorld": "vue-tsc --noEmit && cross-env COM_TARGET=HelloWorld vite build",
     "preview": "vite preview",
-    "switch": "vue-demi-switch"
+    "switch": "vue-demi-switch",
+    "vue2": "vue-demi-switch 2 vue2"
   },
   "dependencies": {
     "@vue/composition-api": "^1.4.9",
+    "vue": "2",
     "vue-demi": "^0.12.5",
+    "vue2": "npm:vue@2",
+    "vue3": "npm:vue@3",
     "vue3-hello-world": "^1.0.1"
   },
   "peerDependencies": {
@@ -58,7 +62,6 @@
     "typescript": "^4.6.3",
     "vite": "^2.9.1",
     "vite-plugin-dts": "^1.0.5",
-    "vue": "^3.2.25",
     "vue-tsc": "^0.33.9"
   }
 }
