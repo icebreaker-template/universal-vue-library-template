@@ -10,7 +10,7 @@ import * as path from 'path';
 // const target = process.argv.slice(3)[0]
 // const dir = buildMap[target] || __dirname
 
-process.chdir(path.resolve(__dirname, 'src/components/HelloWorld'));
+// process.chdir(path.resolve(__dirname, 'src/components/HelloWorld'));
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
