@@ -1,7 +1,7 @@
 import { createVuePlugin } from 'vite-plugin-vue2'
 import * as path from 'path'
 
-process.chdir(path.resolve(__dirname, 'src/components/HelloWorld'))
+// process.chdir(path.resolve(__dirname, 'src/components/HelloWorld'))
 export default {
   plugins: [createVuePlugin()],
   build: {
