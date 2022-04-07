@@ -23,10 +23,8 @@
   },
   "dependencies": {
     "@vue/composition-api": "^1.4.9",
-    "vue": "2",
+    "vue": "^3.2.31",
     "vue-demi": "^0.12.5",
-    "vue2": "npm:vue@2",
-    "vue3": "npm:vue@3",
     "vue3-hello-world": "^1.0.1"
   },
   "peerDependencies": {
