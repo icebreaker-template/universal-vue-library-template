@@ -14,6 +14,7 @@
   },
   "scripts": {
     "dev": "turbo run dev --parallel",
+    "dev2": "turbo run dev2 --parallel",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

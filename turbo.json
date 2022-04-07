@@ -11,6 +11,9 @@
     },
     "dev": {
       "cache": false
+    },
+    "dev2": {
+      "cache": false
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "my-lib-creator",
+  "name": "vue3-vite",
   "main": "./dist/my-lib.umd.js",
   "module": "./dist/my-lib.es.js",
   "files": [
@@ -17,24 +17,11 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "build:HelloWorld": "vue-tsc --noEmit && cross-env COM_TARGET=HelloWorld vite build",
-    "preview": "vite preview",
-    "switch": "vue-demi-switch",
-    "vue2": "vue-demi-switch 2 vue2"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@vue/composition-api": "^1.4.9",
     "vue": "^3.2.31",
-    "vue-demi": "^0.12.5",
     "vue3-hello-world": "^1.0.1"
-  },
-  "peerDependencies": {
-    "@vue/composition-api": "^1.0.0-rc.1",
-    "vue": "^2.0.0 || >=3.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@babel/types": "^7.17.0",
