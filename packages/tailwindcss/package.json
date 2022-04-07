@@ -1,0 +1,31 @@
+{
+  "name": "@icebreakers/tailwindcss-preset",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:lib": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "tailwindcss",
+    "preset"
+  ],
+  "author": "SonOfMagic <qq1324318532@gmail.com>",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@types/tailwindcss": "^3.0.10"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3",
+    "@icebreakers/tsconfig": "*"
+  }
+}

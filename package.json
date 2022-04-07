@@ -16,6 +16,7 @@
     "dev": "turbo run dev --parallel",
     "dev2": "turbo run dev2 --parallel",
     "build": "turbo run build",
+    "build:lib": "turbo run build:lib",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
