@@ -11,9 +11,7 @@ const innerItem = (idx) => {
   console.log('innerItem' + idx)
   return idx
 }
-</script> 
-
-
+</script>
 
 <template>
   <h1>{{ msg }}</h1>

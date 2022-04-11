@@ -5,9 +5,9 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    'standard',
-    'prettier',
-    'plugin:prettier/recommended'
+    'standard'
+    // 'prettier',
+    // 'plugin:prettier/recommended'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -20,6 +20,6 @@ module.exports = {
   },
   rules: {
     'vue/no-multiple-template-root': 0
-    //'prettier/prettier': 2
+    // 'prettier/prettier': 2
   }
 }
