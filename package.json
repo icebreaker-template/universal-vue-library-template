@@ -4,10 +4,18 @@
   "description": "",
   "main": "index.js",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "apps/*"
+    ],
+    "nohoist": [
+      "**/vue",
+      "**/vue-template-compiler",
+      "**/vite-plugin-vue2",
+      "**/vite"
+    ]
+  },
   "dependencies": {},
   "devDependencies": {
     "turbo": "^1.1.10"

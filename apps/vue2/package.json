@@ -3,8 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev2": "vite",
+    "dev": "vite",
     "build": "vite build",
+    "build:HelloWorld": "cross-env COM_TARGET=HelloWorld vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

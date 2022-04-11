@@ -15,14 +15,14 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      root: path.resolve(__dirname, 'src/components/HelloWorld'),
+      root: dir,
       outputDir: 'dist/types'
     })
   ],
   build: {
-    outDir: path.resolve(__dirname, 'src/components/HelloWorld/dist'),
+    outDir: path.resolve(dir, 'dist'),
     lib: {
-      entry: path.resolve(__dirname, 'src/components/HelloWorld/src/index.ts'),
+      entry: path.resolve(dir, 'src/index.ts'),
       name: 'HelloWorld',
       fileName: (format) => `lib.${format}.js`
     },
@@ -37,8 +37,5 @@ export default defineConfig({
         }
       }
     }
-  },
-  optimizeDeps: {
-    // exclude: ['vue-demi']
   }
 })
