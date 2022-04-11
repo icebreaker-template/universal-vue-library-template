@@ -24,8 +24,8 @@
     "vue3-hello-world": "^1.0.1"
   },
   "devDependencies": {
+    "@icebreakers/tailwindcss-preset": "*",
     "@vitejs/plugin-vue": "^2.3.1",
-    "vue-tsc": "^0.33.9",
-    "@icebreakers/tailwindcss-preset": "*"
+    "vue-tsc": "^0.34.5"
   }
 }

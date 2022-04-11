@@ -16,9 +16,6 @@
       "dependsOn": ["build:lib"],
       "cache": false
     },
-    "dev2": {
-      "dependsOn": ["build:lib"],
-      "cache": false
-    }
+    "build:HelloWorld": {}
   }
 }
