@@ -1,12 +1,15 @@
 <template>
-  <HelloWorld></HelloWorld>
+  <div>
+    <FrameSelectionDemo></FrameSelectionDemo>
+  </div>
 </template>
 
 <script lang="ts">
-import HelloWorld from './components/HelloWorld/src/index.vue'
+// import HelloWorld from './components/HelloWorld/src/index.vue'
+import FrameSelectionDemo from './components/vue-frame-selection/demo/index.vue'
 export default {
   components: {
-    HelloWorld
+    FrameSelectionDemo
   }
 }
 </script>
