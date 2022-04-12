@@ -10,10 +10,7 @@
       "apps/*"
     ],
     "nohoist": [
-      "**/vue",
-      "**/vue-template-compiler",
-      "**/vite-plugin-vue2",
-      "**/vite"
+      "**/vue"
     ]
   },
   "dependencies": {},
