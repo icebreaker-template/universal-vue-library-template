@@ -16,6 +16,6 @@
       "dependsOn": ["build:lib"],
       "cache": false
     },
-    "build:HelloWorld": {}
+    "build:coms": {}
   }
 }

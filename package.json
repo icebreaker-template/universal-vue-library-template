@@ -47,7 +47,7 @@
     "dev2": "turbo run dev2 --parallel",
     "build": "turbo run build",
     "build:lib": "turbo run build:lib",
-    "build:HelloWorld": "turbo run build:HelloWorld",
+    "build:coms": "turbo run build:coms",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },

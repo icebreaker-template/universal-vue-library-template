@@ -1,0 +1,39 @@
+{
+  "name": "vue-frame-selection",
+  "version": "0.0.1",
+  "description": "vue-frame-selection",
+  "main": "./dist/lib.umd.js",
+  "module": "./dist/lib.es.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib.es.js",
+      "require": "./dist/lib.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {},
+  "keywords": [
+    "vue",
+    "vue2",
+    "frame",
+    "selection",
+    "frame-selection"
+  ],
+  "author": "SonOfMagic <qq1324318532@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonofmagic/universal-vue-library-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sonofmagic/universal-vue-library-template/issues"
+  },
+  "homepage": "https://github.com/sonofmagic/universal-vue-library-template/tree/main/apps/vue2/src/components/vue-frame-selection#readme"
+}

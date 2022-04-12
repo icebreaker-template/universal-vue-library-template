@@ -37,7 +37,9 @@ type IfEquals<X, Y, A = X, B = never> = (<T>() => T extends X ? 1 : 2) extends <
 
 type ReadonlyKeys<T> = {
   [P in keyof T]-?: IfEquals<
+    // eslint-disable-next-line no-unused-vars
     { [Q in P]: T[P] },
+    // eslint-disable-next-line no-unused-vars
     { -readonly [Q in P]: T[P] },
     never,
     P
@@ -466,11 +468,12 @@ function isDOM (object: unknown) {
   if (typeof HTMLElement === 'function') {
     return object instanceof HTMLElement || object instanceof Document
   } else {
-    // @ts-ignore
     return (
       object &&
       typeof object === 'object' &&
+      // @ts-ignore
       object.nodeType &&
+      // @ts-ignore
       typeof object.nodeName === 'string'
     )
   }

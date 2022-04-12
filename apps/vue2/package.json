@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:HelloWorld": "cross-env COM_TARGET=HelloWorld vite build",
+    "build:coms": "cross-env COM_TARGET=vue-frame-selection vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
