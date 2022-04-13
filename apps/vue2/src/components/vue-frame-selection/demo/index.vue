@@ -112,6 +112,8 @@
         </Calendar>
       </div>
     </FrameSelectionGroup>
+
+    <Calendar :year="1995" :month="9" :value="set"></Calendar>
   </div>
 </template>
 
@@ -138,6 +140,7 @@ export default {
   data () {
     const calendarItemCount = 42
     return {
+      set: new Set(),
       workday: null,
       saturday: null,
       sunday: null,

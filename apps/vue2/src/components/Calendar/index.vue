@@ -16,7 +16,7 @@
                   selected: item.selected
                 }
               ]"
-              :key="item.id"
+              :key="item.value"
               @click="onClick(item)"
             >
               {{ item.text }}
@@ -31,8 +31,6 @@
 <script lang="ts">
 import dayjs from 'dayjs'
 import Vue from 'vue'
-
-import { nanoid } from 'nanoid'
 
 const xAxisArr = ['日', '一', '二', '三', '四', '五', '六']
 
@@ -71,6 +69,7 @@ export default Vue.extend({
       type: [Set],
       default: () => new Set()
     }
+    // genId
   },
   watch: {
     month () {
@@ -81,19 +80,18 @@ export default Vue.extend({
     }
   },
   methods: {
-    emitInput () {
-      this.$emit(
-        'input',
-        this.items.filter((x) => x.selected).map((x) => x.value)
-      )
-    },
-    valueFormat (text: number | undefined) {
-      return [this.year, this.month, text ?? ''].join('-')
+    valueFormat (year: number, month: number, date: number) {
+      return [year, month + 1, date].join('-')
     },
     onClick (item: IDateItem) {
       if (!item.disabled) {
+        if (item.selected) {
+          this.value.delete(item.value)
+        } else {
+          this.value.add(item.value)
+        }
+
         item.selected = !item.selected
-        this.emitInput()
       }
     },
     createDateItem (item: Partial<IDateItem>): IDateItem {
@@ -104,9 +102,7 @@ export default Vue.extend({
       >(
         {},
         {
-          id: nanoid(),
           disabled: true,
-          value: this.valueFormat(item.text),
           selected: false,
           color: null
         },
@@ -122,6 +118,7 @@ export default Vue.extend({
       const daysInMonth = now.daysInMonth()
       const start = now.startOf('month')
       const prevMonth = now.add(-1, 'month')
+      const nextMonth = now.add(1, 'month')
       const prevMonthEnd = prevMonth.endOf('month')
       const prevMonthEndDate = prevMonthEnd.date()
       const startIdx = start.day()
@@ -130,18 +127,26 @@ export default Vue.extend({
         // 上个月
         if (offset < 0) {
           const text = prevMonthEndDate + offset + 1
+
           return this.createDateItem({
-            text
+            text,
+            value: this.valueFormat(prevMonth.year(), prevMonth.month(), text)
           })
         } else if (offset >= daysInMonth) {
           // 下个月
           const text = offset - daysInMonth + 1
-          return this.createDateItem({
+          const value = this.valueFormat(
+            nextMonth.year(),
+            nextMonth.month(),
             text
+          )
+          return this.createDateItem({
+            text,
+            value
           })
         }
         const text = offset + 1
-        const value = this.valueFormat(text)
+        const value = this.valueFormat(now.year(), now.month(), text)
         const disabled = false
         return this.createDateItem({
           text,
