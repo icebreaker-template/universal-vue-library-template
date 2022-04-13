@@ -1,6 +1,6 @@
 {
   "name": "@icebreakers/tsconfig",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,12 +9,22 @@
   "files": [
     "base.json",
     "library.json",
-    "index.js"
+    "index.js",
+    "tsconfig.com.json"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "tsconfig"
+  ],
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1"
+  },
+  "author": "SonOfMagic <qq1324318532@gmail.com>",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@types/tailwindcss": "^3.0.10"
   }
 }

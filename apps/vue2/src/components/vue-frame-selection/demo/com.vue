@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import FrameSelectionGroup from './group.vue'
-import FrameSelectionItem from './item.vue'
+import FrameSelectionGroup from '../src/group.vue'
+import FrameSelectionItem from '../src/item.vue'
 
 export default {
   name: 'FrameSelection',
