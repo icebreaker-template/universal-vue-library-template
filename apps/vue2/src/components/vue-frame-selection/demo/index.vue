@@ -87,6 +87,7 @@
     >
       <div class="date-selection-area">
         <Calendar
+          ref="calendar"
           class="mb-4"
           :key="i"
           :year="parseInt(currentYear)"
@@ -193,13 +194,25 @@ export default {
   },
   methods: {
     onWorkdayChange (item) {
-      console.log(item)
+      this.$refs.calendar.forEach((calendar) => {
+        calendar.workday.forEach((x) => {
+          x.color = item.color
+        })
+      })
     },
     onSaturdayChange (item) {
-      console.log(item)
+      this.$refs.calendar.forEach((calendar) => {
+        calendar.saturday.forEach((x) => {
+          x.color = item.color
+        })
+      })
     },
     onSundayChange (item) {
-      console.log(item)
+      this.$refs.calendar.forEach((calendar) => {
+        calendar.sunday.forEach((x) => {
+          x.color = item.color
+        })
+      })
     },
     onYearChange () {
       this.clear()
