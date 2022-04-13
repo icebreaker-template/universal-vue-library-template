@@ -55,12 +55,12 @@ export default {
       }
     },
     getInnerBoxRectList () {
-      return this.cacheDoms.map((node) => {
+      return this.cacheDoms.map((dom) => {
         return {
-          left: node.offsetLeft,
-          top: node.offsetTop,
-          width: node.offsetWidth,
-          height: node.offsetHeight
+          left: dom.offsetLeft,
+          top: dom.offsetTop,
+          width: dom.offsetWidth,
+          height: dom.offsetHeight
         }
       })
     }

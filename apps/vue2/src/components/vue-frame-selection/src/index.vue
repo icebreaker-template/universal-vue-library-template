@@ -1,8 +1,19 @@
 <template>
-  <FrameSelectionGroup ref="selection" @mousedown="onMousedown" @mousemove="onMousemove" @mouseup="onMouseup">
-    <FrameSelectionItem :selected="!item.disabled && (isInTheBoxList[idx] || checkSelected(idx))" v-for="(item, idx) in data" :key="item[valueKey]">
-      <template v-slot="{ selected }">
-        <slot :selected="selected" :item="item" :index="idx"></slot>
+  <FrameSelectionGroup
+    ref="selection"
+    @mousedown="onMousedown"
+    @mousemove="onMousemove"
+    @mouseup="onMouseup"
+  >
+    <FrameSelectionItem v-for="(item, idx) in data" :key="item[valueKey]">
+      <template>
+        <slot
+          :selected="
+            !item.disabled && (isInTheBoxList[idx] || checkSelected(idx))
+          "
+          :item="item"
+          :index="idx"
+        ></slot>
       </template>
     </FrameSelectionItem>
   </FrameSelectionGroup>

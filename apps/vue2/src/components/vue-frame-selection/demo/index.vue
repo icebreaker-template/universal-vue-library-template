@@ -117,16 +117,20 @@
       </div>
     </FrameSelectionGroup>
 
-    <Calendar :year="1995" :month="9" :value="set"></Calendar>
+    <!-- <Calendar :year="1995" :month="9" :value="set"></Calendar> -->
   </div>
 </template>
 
 <script>
 import Calendar from '../../Calendar/index.vue'
-import { FrameSelectionGroup, FrameSelectionItem } from 'vue-frame-selection'
+// import {
+//   FrameSelectionGroup,
+//   FrameSelectionItem,
+//   MouseSelection
+// } from 'vue-frame-selection'
 // import FrameSelection from './FrameSelection/index.vue'
-// import FrameSelectionGroup from '../src/group.vue'
-// import FrameSelectionItem from '../src/item.vue'
+import FrameSelectionGroup from '../src/group.vue'
+import FrameSelectionItem from '../src/item.vue'
 // interface CustomRect {
 //   left: number
 //   top: number

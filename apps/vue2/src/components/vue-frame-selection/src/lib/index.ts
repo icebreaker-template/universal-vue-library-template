@@ -334,6 +334,7 @@ class MouseSelection {
     // console.log('[_selectStart]:', event)
     // @ts-ignore
     const nodeList = this.targetDom.querySelectorAll(this.config.stopSelector)
+
     const isStopNode = findNode(
       event.target as Element,
       Array.from(nodeList) as DOMType[]
