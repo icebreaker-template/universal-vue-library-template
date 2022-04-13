@@ -28,17 +28,30 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import dayjs from 'dayjs'
+import Vue from 'vue'
 // import { v4 } from 'uuid'
 import { nanoid } from 'nanoid'
 // dayjs().get
 const xAxisArr = ['日', '一', '二', '三', '四', '五', '六']
-export default {
+
+interface IDateItem {
+  id: string
+  text: number
+  disabled: boolean
+  value: string
+  type?: string
+  selected: boolean
+  color: string | null
+}
+
+export default Vue.extend({
   data () {
+    const items: IDateItem[] = []
     return {
       xAxisArr,
-      items: []
+      items
     }
   },
   props: {
@@ -55,8 +68,8 @@ export default {
       default: 2022
     },
     value: {
-      type: [Array],
-      default: () => []
+      type: [Set],
+      default: () => new Set()
     }
   },
   watch: {
@@ -74,14 +87,27 @@ export default {
         this.items.filter((x) => x.selected).map((x) => x.value)
       )
     },
-    valueFormat (text) {
-      return [this.year, this.month, text].join('-')
+    valueFormat (text: number | undefined) {
+      return [this.year, this.month, text ?? ''].join('-')
     },
-    onClick (item) {
+    onClick (item: IDateItem) {
       if (!item.disabled) {
         item.selected = !item.selected
         this.emitInput()
       }
+    },
+    createDateItem (item: Partial<IDateItem>): IDateItem {
+      return Object.assign<Partial<IDateItem>, Partial<IDateItem>, Partial<IDateItem>>(
+        {},
+        {
+          id: nanoid(),
+          disabled: true,
+          value: this.valueFormat(item.text),
+          selected: false,
+          color: null
+        },
+        item
+      ) as IDateItem
     },
     getItems () {
       const { year, month } = this
@@ -100,37 +126,25 @@ export default {
         // 上个月
         if (offset < 0) {
           const text = prevMonthEndDate + offset + 1
-          return {
-            id: nanoid(),
-            text,
-            disabled: true,
-            value: this.valueFormat(text),
-            selected: false,
-            color: null
-          }
+          return this.createDateItem({
+            text
+          })
         } else if (offset >= daysInMonth) {
           // 下个月
           const text = offset - daysInMonth + 1
-          return {
-            id: nanoid(),
-            text,
-            disabled: true,
-            value: this.valueFormat(text),
-            selected: false,
-            color: null
-          }
+          return this.createDateItem({
+            text
+          })
         }
         const text = offset + 1
         const value = this.valueFormat(text)
         const disabled = false
-        return {
-          id: nanoid(),
+        return this.createDateItem({
           text,
           disabled,
           value,
-          selected: this.value.includes(value) && !disabled,
-          color: null
-        }
+          selected: this.value.has(value) && !disabled
+        })
       })
       return arr
     },
@@ -142,33 +156,33 @@ export default {
   created () {
     this.sync()
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
 .som-calendar-wrap {
   @apply w-[236px];
   .month-label {
-    @apply text-lg text-[#3380FF] font-medium select-none;
+    @apply select-none text-lg font-medium text-[#3380FF];
   }
   .main-content {
     @apply h-[188px];
     .date-row {
-      @apply grid grid-cols-7 h-[161px];
+      @apply grid h-[161px] grid-cols-7;
       &.axis {
         @apply h-[26.8px];
         .row-item {
-          @apply text-[#333333] cursor-auto;
+          @apply cursor-auto text-[#333333];
         }
       }
       .row-item {
-        @apply text-[#666666] text-[13px] leading-[20px] cursor-pointer font-medium flex justify-center items-center w-5 h-5 transition-colors ;
+        @apply flex h-5 w-5 cursor-pointer items-center justify-center text-[13px] font-medium leading-[20px] text-[#666666] transition-colors;
         user-select: none;
         &.disabled {
-          @apply text-[#C0C4CC] cursor-not-allowed;
+          @apply cursor-not-allowed text-[#C0C4CC];
         }
         &.selected {
-          @apply text-white bg-[#3380ff] #{!important};
+          @apply bg-[#3380ff] text-white #{!important};
         }
       }
     }
