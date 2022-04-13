@@ -26,6 +26,7 @@
   "devDependencies": {
     "@icebreakers/tailwindcss-preset": "*",
     "@vitejs/plugin-vue": "^2.3.1",
-    "vue-tsc": "^0.34.5"
+    "vue-tsc": "^0.34.5",
+    "@icebreakers/tsconfig": "*"
   }
 }

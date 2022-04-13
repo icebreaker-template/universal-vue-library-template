@@ -12,7 +12,8 @@
   },
   "devDependencies": {
     "vite-plugin-vue2": "^1.9.3",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "@icebreakers/tsconfig": "*"
   },
   "dependencies": {
     "element-ui": "^2.15.6",
