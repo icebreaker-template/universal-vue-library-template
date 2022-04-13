@@ -31,9 +31,9 @@
 <script lang="ts">
 import dayjs from 'dayjs'
 import Vue from 'vue'
-// import { v4 } from 'uuid'
+
 import { nanoid } from 'nanoid'
-// dayjs().get
+
 const xAxisArr = ['日', '一', '二', '三', '四', '五', '六']
 
 interface IDateItem {
@@ -97,7 +97,11 @@ export default Vue.extend({
       }
     },
     createDateItem (item: Partial<IDateItem>): IDateItem {
-      return Object.assign<Partial<IDateItem>, Partial<IDateItem>, Partial<IDateItem>>(
+      return Object.assign<
+        Partial<IDateItem>,
+        Partial<IDateItem>,
+        Partial<IDateItem>
+      >(
         {},
         {
           id: nanoid(),
@@ -121,7 +125,7 @@ export default Vue.extend({
       const prevMonthEnd = prevMonth.endOf('month')
       const prevMonthEndDate = prevMonthEnd.date()
       const startIdx = start.day()
-      const arr = new Array(6 * 7).fill(0).map((x, idx) => {
+      const arr = new Array(6 * 7).fill(0).map((_x, idx) => {
         const offset = idx - startIdx
         // 上个月
         if (offset < 0) {
@@ -176,8 +180,8 @@ export default Vue.extend({
         }
       }
       .row-item {
-        @apply flex h-5 w-5 cursor-pointer items-center justify-center text-[13px] font-medium leading-[20px] text-[#666666] transition-colors;
-        user-select: none;
+        @apply flex h-5 w-5 cursor-pointer select-none items-center justify-center text-[13px] font-medium leading-[20px] text-[#666666] transition-colors;
+
         &.disabled {
           @apply cursor-not-allowed text-[#C0C4CC];
         }
