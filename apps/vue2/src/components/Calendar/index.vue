@@ -79,6 +79,46 @@ export default Vue.extend({
       this.sync()
     }
   },
+  computed: {
+    _dates (): {
+      workday: IDateItem[]
+      saturday: IDateItem[]
+      sunday: IDateItem[]
+      } {
+      const workday: IDateItem[] = []
+      const saturday: IDateItem[] = []
+      const sunday: IDateItem[] = []
+      let p: IDateItem[]
+      for (let i = 0; i < this.items.length; i++) {
+        const item = this.items[i]
+        const idx = i % 7
+        if (idx === 0) {
+          p = sunday
+        } else if (idx === 6) {
+          p = saturday
+        } else {
+          p = workday
+        }
+        if (!item.disabled) {
+          p.push(item)
+        }
+      }
+      return {
+        workday,
+        saturday,
+        sunday
+      }
+    },
+    workday (): IDateItem[] {
+      return this._dates.workday
+    },
+    saturday (): IDateItem[] {
+      return this._dates.saturday
+    },
+    sunday (): IDateItem[] {
+      return this._dates.sunday
+    }
+  },
   methods: {
     valueFormat (year: number, month: number, date: number) {
       return [year, month + 1, date].join('-')

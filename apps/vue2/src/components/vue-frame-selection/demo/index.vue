@@ -76,6 +76,9 @@
         {{ b.text }}
       </button>
     </div>
+    <!-- @touchstart="onTouchstart"
+      @touchmove="onTouchmove"
+      @touchend="onTouchend" -->
     <FrameSelectionGroup
       ref="selection"
       @mousedown="onMousedown"
@@ -266,10 +269,7 @@ export default {
       })
     },
     onCalendarInit (data, idx) {
-      // console.log(data, idx)
       this.$set(this.calendarArray, idx, data)
-      // [idx] = data
-      // 42
     }
   },
   created () {
