@@ -11,6 +11,11 @@ const buildMap = {
     dir: path.resolve(__dirname, 'src/components/vue-frame-selection'),
     entry: 'src/index.ts',
     name: 'vue-frame-selection'
+  },
+  Calendar: {
+    dir: path.resolve(__dirname, 'src/components/Calendar'),
+    entry: 'index.vue',
+    name: 'Calendar'
   }
 }
 

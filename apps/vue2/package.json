@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:HelloWorld": "cross-env COM_TARGET=HelloWorld vite build",
+    "build:Calendar": "cross-env COM_TARGET=Calendar vite build",
     "build:coms": "cross-env COM_TARGET=vue-frame-selection vite build",
     "preview": "vite preview"
   },
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "element-ui": "^2.15.6",
-    "vue": "2"
+    "vue": "2",
+    "vue-frame-selection": "^0.0.1"
   }
 }

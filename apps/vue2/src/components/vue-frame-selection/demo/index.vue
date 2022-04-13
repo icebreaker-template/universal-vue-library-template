@@ -117,9 +117,10 @@
 
 <script>
 import Calendar from '../../Calendar/index.vue'
+import { FrameSelectionGroup, FrameSelectionItem } from 'vue-frame-selection'
 // import FrameSelection from './FrameSelection/index.vue'
-import FrameSelectionGroup from '../src/group.vue'
-import FrameSelectionItem from '../src/item.vue'
+// import FrameSelectionGroup from '../src/group.vue'
+// import FrameSelectionItem from '../src/item.vue'
 // interface CustomRect {
 //   left: number
 //   top: number
