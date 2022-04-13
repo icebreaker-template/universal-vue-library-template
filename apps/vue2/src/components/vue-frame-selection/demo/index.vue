@@ -82,7 +82,7 @@
       @mousemove="onMousemove"
       @mouseup="onMouseup"
     >
-      <div class="grid grid-cols-6">
+      <div class="date-selection-area">
         <Calendar
           class="mb-4"
           :key="i"
@@ -291,6 +291,9 @@ export default {
   }
 }
 
+.date-selection-area {
+  @include responsive-grid-items(1920px, 236px, 6);
+}
 // .frame-selection-rectangle-element {
 //   border-style: dashed !important;
 // }
