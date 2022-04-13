@@ -1,6 +1,6 @@
 {
   "name": "vue-frame-selection",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "vue-frame-selection",
   "main": "./dist/lib.umd.js",
   "module": "./dist/lib.es.js",

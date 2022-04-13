@@ -17,7 +17,7 @@
 
 ## Preview
 
-![demo](./assets/demo.gif)
+[Live Demo](https://www.icebreaker.top/demos/vue-frame-selection) | [Gif](https://github.com/sonofmagic/universal-vue-library-template/blob/main/apps/vue2/src/components/vue-frame-selection/assets/demo.gif)
 
 ## Usage
 

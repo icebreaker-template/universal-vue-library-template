@@ -4,10 +4,21 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import MouseSelection from './lib/index'
-export default {
+import Vue from 'vue'
+import type { Component } from 'vue'
+
+interface PositionSizeMap {
+  left: number
+  top: number
+  width: number
+  height: number
+}
+
+export default Vue.extend({
   name: 'FrameSelectionGroup',
+  // @ts-ignore
   componentName: 'SomFrameSelectionGroup',
   provide () {
     return {
@@ -37,19 +48,24 @@ export default {
       type: [Boolean]
     }
   },
-  data () {
+  data () : {
+    fields:Component[]
+    selection: MouseSelection | null
+    } {
+    const fields: Component[] = []
+    const selection: MouseSelection | null = null
     return {
-      selection: null,
-      fields: []
+      selection,
+      fields
     }
   },
   computed: {
-    cacheDoms ({ fields }) {
-      return fields.map((x) => x.$refs.dom)
+    cacheDoms () {
+      return this.fields.map((x) => x.$refs.dom)
     }
   },
   methods: {
-    isInTheSelection (rect) {
+    isInTheSelection (rect:PositionSizeMap) {
       if (this.selection) {
         return this.selection.isInTheSelection(rect)
       }
@@ -66,7 +82,7 @@ export default {
     }
   },
   mounted () {
-    this.selection = new MouseSelection(this.$refs.wrap, {
+    this.selection = new MouseSelection(this.$refs.wrap as Element, {
       onMousedown: (e) => {
         this.$emit('mousedown', e)
       },
@@ -87,5 +103,5 @@ export default {
       zIndex: this.zIndex
     })
   }
-}
+})
 </script>
