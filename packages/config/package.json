@@ -1,0 +1,6 @@
+{
+  "name": "@icebreakers/config",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "license": "MIT"
+}
