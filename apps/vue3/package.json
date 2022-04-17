@@ -23,6 +23,7 @@
   "dependencies": {
     "element-plus": "^2.1.9",
     "vue": "^3.2.33",
+    "vue-frame-selection": "^2.0.0",
     "vue3-hello-world": "^1.0.1"
   },
   "devDependencies": {

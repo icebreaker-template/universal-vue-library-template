@@ -10,8 +10,13 @@
 
 <script lang="ts" setup>
 import { defineProps, withDefaults, ref } from 'vue'
-import FrameSelectionGroup from '../src/group.vue'
-import FrameSelectionItem from '../src/item.vue'
+import {
+  FrameSelectionGroup,
+  FrameSelectionItem
+  // MouseSelection
+} from 'vue-frame-selection'
+// import FrameSelectionGroup from '../src/group.vue'
+// import FrameSelectionItem from '../src/item.vue'
 import type { PositionSizeMap } from '../src/shared'
 let isClick = false
 
