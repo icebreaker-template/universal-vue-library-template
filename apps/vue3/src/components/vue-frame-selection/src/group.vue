@@ -14,8 +14,8 @@ export default defineComponent({
   name: 'FrameSelectionGroup',
   // @ts-ignore
   componentName: 'SomFrameSelectionGroup',
-  // emits: ['mousedown', 'mouseup', 'mousemove'],
-  // expose: ['selection', 'fields', 'cacheDoms', 'isInTheSelection', 'getInnerBoxRectList'],
+  emits: ['mousedown', 'mouseup', 'mousemove'],
+  expose: ['selection', 'fields', 'cacheDoms', 'isInTheSelection', 'getInnerBoxRectList'],
   setup (props, ctx) {
     const fields = ref<HTMLElement[]>()
     const selection = ref<MouseSelection>()
