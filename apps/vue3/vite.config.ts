@@ -4,10 +4,25 @@ import dts from 'vite-plugin-dts'
 import * as path from 'path'
 
 const buildMap = {
-  HelloWorld: path.resolve(__dirname, 'src/components/HelloWorld')
+  HelloWorld: {
+    dir: path.resolve(__dirname, 'src/components/HelloWorld'),
+    entry: 'src/index.vue',
+    name: 'HelloWorld'
+  },
+  'vue-frame-selection': {
+    dir: path.resolve(__dirname, 'src/components/vue-frame-selection'),
+    entry: 'src/index.ts',
+    name: 'vue-frame-selection'
+  },
+  Calendar: {
+    dir: path.resolve(__dirname, 'src/components/Calendar'),
+    entry: 'index.vue',
+    name: 'Calendar'
+  }
 }
 
-const dir = buildMap[process.env.COM_TARGET] || __dirname
+const Target = buildMap[process.env.COM_TARGET] || {}
+const dir = Target.dir || __dirname
 
 process.chdir(dir)
 // https://vitejs.dev/config/
@@ -22,8 +37,8 @@ export default defineConfig({
   build: {
     outDir: path.resolve(dir, 'dist'),
     lib: {
-      entry: path.resolve(dir, 'src/index.ts'),
-      name: 'HelloWorld',
+      entry: Target.entry,
+      name: Target.name,
       fileName: (format) => `lib.${format}.js`
     },
     rollupOptions: {

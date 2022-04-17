@@ -1,3 +1,4 @@
 {
-  "extends": "@icebreakers/tsconfig/tsconfig.com.json"
+  "extends": "@icebreakers/tsconfig/tsconfig.com.json",
+  "include": ["src/*"]
 }

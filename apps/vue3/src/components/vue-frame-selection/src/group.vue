@@ -12,31 +12,26 @@ import type { IProvideMethods, PositionSizeMap } from './shared'
 
 export default defineComponent({
   name: 'FrameSelectionGroup',
-  // @ts-ignore
   componentName: 'SomFrameSelectionGroup',
   emits: ['mousedown', 'mouseup', 'mousemove'],
   expose: ['selection', 'fields', 'cacheDoms', 'isInTheSelection', 'getInnerBoxRectList'],
   setup (props, ctx) {
-    const fields = ref<HTMLElement[]>()
+    const fields = ref<HTMLElement[]>([])
     const selection = ref<MouseSelection>()
     const wrap = ref<HTMLElement>()
     const provideValue: IProvideMethods = {
       addField: (item: HTMLElement) => {
-        fields.value?.push(item)
+        fields.value?.push(item as typeof fields['value'][number])
       },
       removeField: (item: HTMLElement) => {
         const v = fields.value
         if (v) {
-          v.slice(v.indexOf(item), 1)
+          v.slice(v.indexOf(item as typeof fields['value'][number]), 1)
         }
       }
     }
     provide(FrameSelectionSymbol, provideValue)
 
-    // const cacheDoms = computed(() => {
-    //   // @ts-ignore
-    //   return fields.value.map((x) => x.dom)
-    // })
     const isInTheSelection = (rect: PositionSizeMap) => {
       if (selection) {
         return selection.value?.isInTheSelection(rect)

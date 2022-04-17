@@ -16,8 +16,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "build:HelloWorld": "vue-tsc --noEmit && cross-env COM_TARGET=HelloWorld vite build",
-    "build:coms": "vue-tsc --noEmit && cross-env COM_TARGET=vue-frame-selection vite build",
+    "build:HelloWorld": "cross-env COM_TARGET=HelloWorld vite build",
+    "build:coms": "cross-env COM_TARGET=vue-frame-selection vite build",
     "preview": "vite preview"
   },
   "dependencies": {

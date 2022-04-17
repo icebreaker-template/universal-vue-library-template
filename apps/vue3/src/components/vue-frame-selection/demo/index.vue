@@ -1,121 +1,87 @@
 <template>
     <div class="p-4">
-        <FrameSelectionGroup class="space-x-4" ref="selection" @mousedown="onMousedown" @mousemove="onMousemove"
-            @mouseup="onMouseup">
-            <FrameSelectionItem :key="i" v-for="i in 100 " class="w-10 h-10 bg-black inline-block"></FrameSelectionItem>
+        <FrameSelectionGroup ref="selection" @mousedown="onMousedown" @mousemove="onMousemove" @mouseup="onMouseup">
+            <FrameSelectionItem :key="i" v-for="i in 100 " class="w-10 h-10  inline-block select-none" :class="[
+                isSelected(i - 1) ? 'bg-blue-500' : 'bg-gray-500',
+            ]"></FrameSelectionItem>
         </FrameSelectionGroup>
-
-        <!-- <Calendar :year="1995" :month="9" :value="set"></Calendar> -->
     </div>
 </template>
 
 <script lang="ts" setup>
-import { defineProps, computed, withDefaults, ref, defineComponent } from 'vue'
+import { defineProps, withDefaults, ref } from 'vue'
 import FrameSelectionGroup from '../src/group.vue'
 import FrameSelectionItem from '../src/item.vue'
+import type { PositionSizeMap } from '../src/shared'
+let isClick = false
 
-const isClick = false
+const isInTheBoxListRef = ref<boolean[]>([])
 
-const isInTheBoxList = []
-const innerBoxRectList = []
-const selectedSet = new Set()
+let innerBoxRectList: PositionSizeMap[] = []
+const selectedSet = ref<Set<number>>(new Set())
+
 const selection = ref()
 interface Props {
     modelValue?: string[]
     valueKey?: string
 }
-
+// toRefs(data)
 withDefaults(defineProps<Props>(), {
   modelValue: () => [],
   valueKey: 'id'
 })
-// const totalCalendarArray = computed(({ calendarArray }) => {
-//   return calendarArray.reduce((acc, cur) => {
-//     acc = acc.concat(cur)
-//     return acc
-//   }, [])
-// })
 
-// function clear () {
-//   this.selectedSet.clear()
-// }
-// function isSelected (item, index, pidx) {
-//   const notDisabled = !item.disabled
-//   const idx = (pidx - 1) * this.calendarItemCount + index
-//   return (
-//     notDisabled && (this.isInTheBoxList[idx] || this.checkSelected(idx))
-//   )
-// }
-// function checkSelected (idx) {
-//   return this.selectedSet.has(idx)
-// }
+function checkSelected (idx: number) {
+  return selectedSet.value.has(idx)
+}
+
+function isSelected (idx: number) {
+  return (
+    isInTheBoxListRef.value[idx] || checkSelected(idx)
+  )
+}
+
+function inBoxSync () {
+  isInTheBoxListRef.value = innerBoxRectList.map((rect) => {
+    return selection.value.isInTheSelection(rect)
+  })
+}
 function onMousedown () {
-//   isClick = true
-//   innerBoxRectList = selection.getInnerBoxRectList()
+  isClick = true
+  innerBoxRectList = selection.value.getInnerBoxRectList()
 }
 
 function onMousemove () {
-//   isClick = false
-//   inBoxSync()
+  isClick = false
+  inBoxSync()
 }
 function onMouseup () {
-  // if (isClick) {
-  // .inBoxSync()
-  // }
+  if (isClick) {
+    inBoxSync()
+  }
+  const sv = selectedSet.value
+  isInTheBoxListRef.value
+    .reduce<number[]>((acc, cur, idx) => {
+      if (cur) {
+        acc.push(idx)
+      }
+      return acc
+    }, [])
+    .forEach((x) => {
+      if (isClick) {
+        // toggle
+        if (sv.has(x)) {
+          sv.delete(x)
+        } else {
+          sv.add(x)
+        }
+      } else {
+        sv.add(x)
+      }
+    })
 
-  // isInTheBoxList
-  //     .reduce((acc, cur, idx) => {
-  //         if (cur) {
-  //             acc.push(idx)
-  //         }
-  //         return acc
-  //     }, [])
-  //     .forEach((x) => {
-  //         if (!totalCalendarArray[x].disabled) {
-  //             if (isClick) {
-  //                 // toggle
-  //                 if (selectedSet.has(x)) {
-  //                     selectedSet.delete(x)
-  //                 } else {
-  //                     selectedSet.add(x)
-  //                 }
-  //             } else {
-  //                 selectedSet.add(x)
-  //             }
-  //         }
-  //     })
-
-  // isInTheBoxList = []
-  // isClick = false
+  isInTheBoxListRef.value = []
+  isClick = false
 }
-// function inBoxSync() {
-//     isInTheBoxList = this.innerBoxRectList.map((rect) => {
-//         return this.$refs.selection.isInTheSelection(rect)
-//     })
-// }
 
 </script>
-
-<style lang="scss">
-@mixin responsive-grid-items($container-width, $card-width, $col-num) {
-    @apply grid grid-cols-1;
-
-    @if $col-num>1 {
-        @for $i from 2 through $col-num {
-
-            // @debug $container-width - $card-width * ($col-num - $i);
-            @media screen and (min-width: $container-width - $card-width * ($col-num - $i)) {
-                @apply grid-cols-#{$i};
-            }
-        }
-    }
-}
-
-.date-selection-area {
-    @include responsive-grid-items(1920px, 236px, 6);
-}
-
-// .frame-selection-rectangle-element {
-//   border-style: dashed !important;
-// }
-</style>
