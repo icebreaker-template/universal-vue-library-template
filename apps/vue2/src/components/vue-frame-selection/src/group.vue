@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import MouseSelection from './lib/index'
+import { MouseSelection } from '@icebreakers/utils'
 import Vue from 'vue'
 import type { Component } from 'vue'
 

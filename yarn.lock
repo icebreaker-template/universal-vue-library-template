@@ -3013,10 +3013,10 @@ vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
-vue-frame-selection@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmmirror.com/vue-frame-selection/-/vue-frame-selection-1.0.0.tgz#e4335ead43343de9fe9735e0410740a40c08158c"
-  integrity sha512-igdJv353Ry/C/GdzMOU0le1/6HHXDWjLQmRHYt9vm6B1H+Sb58Fn5MdIzTbKBShYriaPQ3NbZ1QL4bEGQIlK/g==
+vue-frame-selection@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/vue-frame-selection/-/vue-frame-selection-1.0.1.tgz#7209b8dd1be5c4bf5ad47df8688e70c5d4c886d4"
+  integrity sha512-eoDvo/0LWa7lEhTYT02xJEGWpOiCbFWouJHHR+nEn1BYycRGx96nvbgORIlcyBUJ76Nf1vJtdUEM85Jm1FExAw==
 
 vue-frame-selection@^2.0.0:
   version "2.0.0"

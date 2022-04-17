@@ -16,8 +16,9 @@
     "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
+    "@icebreakers/utils": "*",
     "element-ui": "^2.15.8",
     "vue": "2",
-    "vue-frame-selection": "^1.0.0"
+    "vue-frame-selection": "^1.0.1"
   }
 }
