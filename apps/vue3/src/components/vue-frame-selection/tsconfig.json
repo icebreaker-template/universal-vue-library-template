@@ -1,0 +1,3 @@
+{
+  "extends": "@icebreakers/tsconfig/tsconfig.com.json"
+}
