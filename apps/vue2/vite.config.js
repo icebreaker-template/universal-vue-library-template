@@ -23,6 +23,8 @@ const Target = buildMap[process.env.COM_TARGET] || {}
 const dir = Target.dir || __dirname
 
 process.chdir(dir)
+
+/** @type {import('vite').UserConfigExport} */
 export default {
   plugins: [
     createVuePlugin(),
